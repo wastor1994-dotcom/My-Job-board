@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตำแหน่งงานว่าง</title>
+    <!-- 1. เชื่อมต่อไปยังไฟล์ CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>ตำแหน่งงานว่าง</h1>
+        <p>ค้นหาโอกาสในการทำงานที่เหมาะกับคุณ</p>
+    </header>
+
+    <main class="container">
+        <!-- ส่วนจัดการข้อมูล (Admin Panel) -->
+        <section class="admin-panel" id="adminPanel">
+            <h2 class="admin-title">🔧 จัดการข้อมูลงาน</h2>
+            <form id="jobForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="location" class="form-label">จังหวัด:</label>
+                        <input type="text" id="location" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">ตำแหน่งงาน:</label>
+                        <input type="text" id="title" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="workplace" class="form-label">สถานที่ปฏิบัติงาน:</label>
+                        <input type="text" id="workplace" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="schedule" class="form-label">เวลาทำงาน:</label>
+                        <input type="text" id="schedule" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="form-label">ลักษณะงาน:</label>
+                    <textarea id="description" class="form-textarea" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="requirements" class="form-label">คุณสมบัติผู้สมัคร:</label>
+                    <textarea id="requirements" class="form-textarea" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="salary" class="form-label">เงินเดือน:</label>
+                    <input type="text" id="salary" class="form-input" required>
+                </div>
+                <div class="admin-buttons">
+                    <button type="submit" class="admin-btn btn-add">
+                        <span id="submitBtnText">➕ เพิ่มงานใหม่</span>
+                    </button>
+                    <button type="button" class="admin-btn btn-clear" id="clearBtn">
+                        🗑️ ล้างฟอร์ม
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ปุ่มสำหรับซ่อน/แสดงแผงจัดการ -->
+        <div class="toggle-panel-container">
+            <button class="admin-btn btn-toggle" id="toggleAdminBtn">
+                <span id="toggleBtnText">🔽 ซ่อนแผงจัดการ</span>
+            </button>
+        </div>
+
+        <!-- ส่วนแสดงสถิติ -->
+        <section class="stats">
+            <div id="jobCount" class="stats-number">0</div>
+            <p class="stats-text">ตำแหน่งงานที่เปิดรับสมัคร</p>
+        </section>
+
+        <!-- ส่วนแสดงรายการงาน -->
+        <section id="jobsGrid" class="jobs-grid">
+            <!-- การ์ดตำแหน่งงานจะถูกสร้างโดย JavaScript แล้วนำมาใส่ในนี้ -->
+        </section>
+    </main>
+
+    <!-- 2. เชื่อมต่อไปยังไฟล์ JavaScript (ต้องอยู่ก่อนปิด body) -->
+    <script src="script.js"></script>
+
+</body>
+</html>
